@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vrishabha Properties - Hassan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+      padding-top: 80px;
+      overflow-x: hidden;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1e3d59;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+    nav .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-shrink: 1;
+      min-width: 0;
+    }
+    nav .nav-left img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    nav .nav-left .title-container {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      min-width: 0;
+    }
+    nav .nav-left .title-container h1 {
+      font-size: 1.2rem;
+      margin: 0;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    nav .nav-left .title-container span {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #b0c4de;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .property-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .property-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.2s ease;
+    }
+    .property-card:hover {
+      transform: scale(1.02);
+    }
+    .property-card h3 {
+      margin-top: 0;
+    }
+    .contact-section {
+      text-align: center;
+      background: #1e3d59;
+      color: white;
+      padding: 60px 20px;
+    }
+    .contact-section h2 {
+      margin-bottom: 20px;
+    }
+    .contact-section p {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <img src="1.png" alt="Logo" />
+      <div class="title-container">
+        <h1>Vrishabha Properties - Hassan</h1>
+        <span>Your Trusted Real Estate Agent in Hassan</span>
+      </div>
+    </div>
+    <ul>
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <div id="listings" class="section">
+    <h2>Featured Listings</h2>
+    <input
+  type="text"
+  id="search-bar"
+  placeholder="Search properties..."
+  style="
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    display: block;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+"
+/>
+
+    <div class="property-container" id="property-container">
+      </div>
+  </div>
+
+  <div id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>📞 Call: +91 8217816168</p>
+    <p>📍 Location: Hassan, Karnataka</p>
+    <p>📱 WhatsApp: <a style="color: #ffd700;" href="https://wa.me/918217816168" target="_blank">Chat Now</a></p>
+  </div>
+
+  <script>
+    const properties = [
+  {
+        title: "Sl No 1: Site for Sale near Siddhartha Layout, Belur Road",
+        description: "Plot Area: 1586 sqft | Length: 61 ft | Breadth: 26 ft | Facing: South",
+        link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%20site%20for%20sale%20near%20Siddhartha%20Layout%20on%20Belur%20Road%20(Sl%20No%201)%20listed%20on%20Vrishaba%20Properties."
+      },
+      {
+        title: "Sl No 2: Site for Sale in Vijayanagara Badavane, Belur Road, Hassan",
+        description: "Plot Area: 1200 sqft | Length: 30 ft | Breadth: 40 ft | Facing: Utara",
+        link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%20site%20for%20sale%20in%20Vijayanagara%20Badavane%20on%20Belur%20Road%20Hassan%20(Sl%20No%202)%20listed%20on%20Vrishaba%20Properties."
+      },
+      {
+        title: "Sl No 3: Agriculture Land for Sale near Shantigrama, Hassan",
+        description: "Area: 11 Guntas",
+        link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2011%20Guntas%20agriculture%20land%20for%20sale%20near%20Shantigrama%20Hassan%20(Sl%20No%203)%20listed%20on%20Vrishaba%20Properties."
+      },
+      {
+        title: "Sl No 4: 4BHK House for Sale in Lakshmi Puram Extension, Penshan Mohalla, Hassan",
+        description: "Plot Area: 2000 sqft | 4 Bedrooms | 2 Bathrooms | 1 Balcony<br>Floors: 2 | Property Age: 10+ Years<br>Width of Facing Road: 36.0 Feet<br>Parking: 1 Covered, 1 Open<br>Water Source: Municipal Corporation",
+        link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%204BHK%20house%20for%20sale%20in%20Lakshmi%20Puram%20Extension%2C%20Penshan%20Mohalla%2C%20Hassan%20(Sl%20No%204)%20listed%20on%20Vrishaba%20Properties."
+      },
+      {
+        title: "Sl No 5: House for Sale near Bitgowdanahalli",
+        description: "Site: 23x40 ft | West Facing Plot | Door Facing: North<br>Built-up Area: 1070 sqft<br>Ground Floor: 2 BHK<br>First Floor: 1 Room with Attached Toilet",
+        link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%20house%20for%20sale%20near%20Bitgowdanahalli%20(Sl%20No%205)%20listed%20on%20Vrishaba%20Properties."
+      },
+      {
+        title: "Sl No 6: Site for Sale in Channapattana, Hassan",
+        description: "Plot Area: 2650 sqft (246.19 sq.m.)<br>Dimensions: 75.00 ft (22.86 m) x 35.00 ft (10.67 m)<br>Facing: East | Width of Facing Road: 20.0 Feet",
+        link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%20site%20for%20sale%20in%20Channapattana%2C%20Hassan%20(Sl%20No%206)%20listed%20on%20Vrishaba%20Properties."
+      },
+      {
+        title: "Sl No 7: 4BHK Independent House/Villa for Sale in Penshan Mohalla, Hassan",
+        description: "4 Bedrooms | 2 Bathrooms<br>Total Floors: 2 | Property Age: 0 to 1 Year<br>Location: Penshan Mohalla, Hassan<br>Note: House is under loan, price can be negotiated",
+        link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%204BHK%20independent%20house%20for%20sale%20in%20Penshan%20Mohalla%2C%20Hassan%20(Sl%20No%207)%20listed%20on%20Vrishaba%20Properties.%20Is%20the%20price%20negotiable%3F"
+      },
+      {
+        title: "Sl No 8: Site for Sale in Vishveshwaraya Extension, Hassan",
+        description: "Plot Area: 1800 sqft (30x60 ft)<br>Facing: East | Road Width: 30 ft<br>Location: Vishveshwaraya Extension, Hassan",
+        link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2030x60%20east%20facing%20site%20for%20sale%20in%20Vishveshwaraya%20Extension%2C%20Hassan%20(Sl%20No%208)%20listed%20on%20Vrishaba%20Properties."
+      },
+      {
+      title: "Sl No 9: Site for Sale in SM Krishna Layout, Hassan",
+      description: "Plot Area: 1500 sqft (30x50 ft)<br>Facing: East | Site No: 1420<br>Location: SM Krishna Layout, Hassan",
+      link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2030x50%20east%20facing%20site%20for%20sale%20in%20SM%20Krishna%20Layout%2C%20Hassan%20(Sl%20No%209)%20listed%20on%20Vrishaba%20Properties."
+      },
+      {
+  title: "Sl No 10: Independent House for Sale – Saraswati Puram, 8th Cross, Hassan",
+  description: "Plot Area: 1650 sqft (30x55 ft)<br>Configuration: 3 Bedrooms, 2 Bathrooms, 1 Balcony, Pooja Room<br>Total Floors: 1 | Property Age: 10+ Years<br>High-quality teak wood used for all woodwork<br>Location: Saraswati Puram, 8th Cross, Hassan",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%20independent%20house%20for%20sale%20in%20Saraswati%20Puram%2C%208th%20Cross%2C%20Hassan%20(Sl%20No%2010)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 11: Revenue Site for Sale – Behind Nanda Gokula Choultry, Hassan",
+  description: "Land Area: 1¾ Gunte<br>Type: Revenue Site<br>Location: Behind Nanda Gokula Choultry, Hassan",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%20revenue%20site%20(1¾%20Gunte)%20for%20sale%20behind%20Nanda%20Gokula%20Choultry%2C%20Hassan%20(Sl%20No%2011)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 12: Site for Sale – Dasarakoppalu, Hassan",
+  description: "Plot Area: 2080 sqft (32x65 ft)<br>Facing: South <br>Details: Borewell, Electricity, Approved Plan<br>Access: Just 10m from 60ft road, 500m to bus stop<br>Location: Near Rainbow Kids School, Dasarakoppalu, Hassan",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2032x65%20south%20facing%20site%20for%20sale%20in%20Dasarakoppalu%2C%20Hassan%20(Sl%20No%2012)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 13: Site for Sale – SM Krishna Layout, Hassan",
+  description: "Plot Area: 2000 sqft (40x50 ft)<br>Type: Corner Site in a Prime Location<br>Location: SM Krishna Layout, Hassan<br>",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2040x50%20corner%20site%20for%20sale%20in%20SM%20Krishna%20Layout%2C%20Hassan%20(Sl%20No%2013)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 14: Site for Sale – SM Krishna Layout, Hassan",
+  description: "Plot Area: 600 sqft (20x30 ft)<br>Type: Corner Site | Facing: East<br>Location: SM Krishna Layout, Hassan",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2020x30%20east%20facing%20corner%20site%20for%20sale%20in%20SM%20Krishna%20Layout%2C%20Hassan%20(Sl%20No%2014)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 15: Site for Sale – SM Krishna Layout, Hassan",
+  description: "Plot Area: 600 sqft (20x30 ft)<br>Facing: East<br>Location: SM Krishna Layout, Hassan",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2020x30%20east%20facing%20site%20for%20sale%20in%20SM%20Krishna%20Layout%2C%20Hassan%20(Sl%20No%2015)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 16: Site for Sale – Rajajinagar, Hassan",
+  description: "Plot Area: 1440 sqft (30x48 ft)<br>Location: Rajajinagar, Hassan",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2030x48%20site%20for%20sale%20in%20Rajajinagar%2C%20Hassan%20(Sl%20No%2017)%20listed%20on%20Vrishaba%20Properties."
+},
+
+{
+  title: "Sl No 17: Land for Sale – Channarayapatna, Tiptur Road",
+  description: "Total Area: 3 Acre 8 Gunte (Includes 8 Gunte Karab)<br>Location: Just 400 meters from the main road<br>Situated on Tiptur Road, Channarayapatna",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%203%20Acre%208%20Gunte%20land%20for%20sale%20near%20Tiptur%20Road%2C%20Channarayapatna%20(Sl%20No%2016)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 18: House for Sale – Channapatna Housing Board Colony, Hassan",
+  description: "Built-up Area: 1224 sqft<br>Configuration: 3 BHK, 3 Bathrooms<br>Location: Prime Location, Housing Board Colony, Hassan, Karnataka",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%203BHK%20house%20for%20sale%20in%20Housing%20Board%20Colony%2C%20Hassan%20(Sl%20No%2018)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 19: Corner Site for Sale – Shankaripuram, Hassan",
+  description: "Plot Area: 1650 sqft (33x50 ft)<br>Facing: North-West | 2 Side Road<br>Municipal Khatha & Layout Approved<br>Location: Near Extension Police Station & Shiva Temple<br>Just 400m from BM Road & Railway Station",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2033x50%20north-west%20facing%20corner%20site%20for%20sale%20in%20Shankaripuram%2C%20Hassan%20(Sl%20No%2019)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 20: Land for Sale – Dudda, Hassan",
+  description: "Plot Area: 5 Guntha<br>Location: Beside Lakshmi Convent, Dudda, Hassan",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%205%20Guntha%20land%20for%20sale%20in%20Dudda%2C%20beside%20Lakshmi%20Convent%20(Sl%20No%2020)%20listed%20on%20Vrishaba%20Properties."
+},
+{
+  title: "Sl No 21: Land for Sale – Doddkondgula, Hassan",
+  description: "Total Area: 25 Gunta<br>Dimensions: 80x300 ft<br>Type: ಗದ್ದೆ (Agricultural Land)<br>Location: Doddkondgula, Hassan",
+  link: "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2025%20Gunta%20(ಗದ್ದೆ)%20land%20for%20sale%20in%20Doddkondgula%2C%20Hassan%20(Sl%20No%2021)%20listed%20on%20Vrishaba%20Properties."
+}
+
+
+
+
+
+
+
+
+
+
+
+
+];
+
+    
+     
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("property-container");
+      // Initial render with shuffled properties
+      renderProperties(); 
+    });
+
+    // Render Properties
+const propertyContainer = document.getElementById("property-container");
+
+function renderProperties(filter = "") {
+  propertyContainer.innerHTML = "";
+
+  const filtered = properties.filter((property) =>
+    (property.title + " " + property.description).toLowerCase().includes(filter.toLowerCase())
+  );
+
+  if (filtered.length === 0) {
+    propertyContainer.innerHTML = "<p>No properties found.</p>";
+    return;
+  }
+
+  // Shuffle only if no filter is applied
+  const propertiesToRender = filter ? filtered : shuffle([...filtered]);
+
+
+  propertiesToRender.forEach((property) => {
+    const card = document.createElement("div");
+    card.className = "property-card";
+
+    card.innerHTML = `
+      <h3>${property.title}</h3>
+      <p>${property.description}</p>
+      <a href="${property.link}" target="_blank">Contact on WhatsApp</a>
+    `;
+    propertyContainer.appendChild(card);
+  });
+}
+
+// Search Listener
+document.getElementById("search-bar").addEventListener("input", (e) => {
+  renderProperties(e.target.value);
+});
+
+  </script>
+
+</body>
+</html>
