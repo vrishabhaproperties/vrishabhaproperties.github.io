@@ -376,58 +376,51 @@
 ];
 
     
-     
 
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("property-container");
-      // Initial render with shuffled properties
-      renderProperties(); 
-    });
-
-    // Render Properties
-const propertyContainer = document.getElementById("property-container");
-
-function renderProperties(filter = "") {
-  propertyContainer.innerHTML = "";
-
-  const filtered = properties.filter((property) =>
-    (property.title + " " + property.description).toLowerCase().includes(filter.toLowerCase())
-  );
-
-  if (filtered.length === 0) {
-    propertyContainer.innerHTML = "<p>No properties found.</p>";
-    return;
+    return array;
   }
 
-  // Shuffle only if no filter is applied
-  const propertiesToRender = filter ? filtered : shuffle([...filtered]);
+  const propertyContainer = document.getElementById("property-container");
 
+  function renderProperties(filter = "") {
+    propertyContainer.innerHTML = "";
 
-  propertiesToRender.forEach((property) => {
-    const card = document.createElement("div");
-    card.className = "property-card";
+    const filtered = properties.filter((property) =>
+      (property.title + " " + property.description).toLowerCase().includes(filter.toLowerCase())
+    );
 
-    card.innerHTML = `
-      <h3>${property.title}</h3>
-      <p>${property.description}</p>
-      <a href="${property.link}" target="_blank">Contact on WhatsApp</a>
-    `;
-    propertyContainer.appendChild(card);
+    if (filtered.length === 0) {
+      propertyContainer.innerHTML = "<p>No properties found.</p>";
+      return;
+    }
+
+    const propertiesToRender = filter ? filtered : shuffle([...filtered]);
+
+    propertiesToRender.forEach(property => {
+      const card = document.createElement("div");
+      card.className = "property-card";
+      card.innerHTML = `
+        <img src="${property.image}" alt="${property.title}" style="width: 100%; height: auto; border-radius: 8px;" />
+        <h3>${property.title}</h3>
+        <p>${property.description}</p>
+        <a href="${property.link}" target="_blank">Contact on WhatsApp</a>
+      `;
+      propertyContainer.appendChild(card);
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    renderProperties(); 
   });
-}
 
-// Search Listener
-document.getElementById("search-bar").addEventListener("input", (e) => {
-  renderProperties(e.target.value);
-});
+  document.getElementById("search-bar").addEventListener("input", (e) => {
+    renderProperties(e.target.value);
+  });
 
   </script>
 
