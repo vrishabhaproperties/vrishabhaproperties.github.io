@@ -6,7 +6,6 @@
   <title>Vrishabha Properties - Hassan</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="new.png">
-
   <style>
     html {
       scroll-behavior: smooth;
@@ -135,8 +134,6 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-
-
   <div id="listings" class="section">
     <h2>Featured Listings</h2>
     <input
@@ -155,7 +152,6 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 "
 />
-
     <div class="property-container" id="property-container">
       </div>
   </div>
@@ -166,7 +162,6 @@
     <p>📍 Location: Hassan, Karnataka</p>
     <p>📱 WhatsApp: <a style="color: #ffd700;" href="https://wa.me/918217816168" target="_blank">Chat Now</a></p>
   </div>
-
   <script>
     const properties = [
   {
@@ -398,9 +393,6 @@
 }
 
 ];
-
-    
-
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -408,23 +400,17 @@
     }
     return array;
   }
-
   const propertyContainer = document.getElementById("property-container");
-
   function renderProperties(filter = "") {
     propertyContainer.innerHTML = "";
-
     const filtered = properties.filter((property) =>
       (property.title + " " + property.description).toLowerCase().includes(filter.toLowerCase())
     );
-
     if (filtered.length === 0) {
       propertyContainer.innerHTML = "<p>No properties found.</p>";
       return;
     }
-
     const propertiesToRender = filter ? filtered : shuffle([...filtered]);
-
    propertiesToRender.forEach(property => {
     const card = document.createElement("div");
     card.className = "property-card";
@@ -446,16 +432,12 @@
     propertyContainer.appendChild(card);
   });
 }
-
   window.addEventListener("DOMContentLoaded", () => {
     renderProperties(); 
   });
-
   document.getElementById("search-bar").addEventListener("input", (e) => {
     renderProperties(e.target.value);
   });
-
   </script>
-
 </body>
 </html>
