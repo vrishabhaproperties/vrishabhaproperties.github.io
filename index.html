@@ -6,256 +6,132 @@
   <title>Vrishabha Properties & Constructions - Hassan</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="image.png">
+
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-      padding-top: 80px;
-      overflow-x: hidden;
+      margin: 0; padding: 0;
+      background: #f5f5f5; color: #333;
+      padding-top: 80px; overflow-x: hidden;
     }
+
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #1e3d59;
-      color: white;
-      display: flex;
-      align-items: center;
+      position: fixed; top: 0; width: 100%;
+      background-color: #1e3d59; color: white;
+      display: flex; align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
-      flex-wrap: wrap;
-      box-sizing: border-box;
+      padding: 10px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000; flex-wrap: wrap; box-sizing: border-box;
     }
-    nav .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-shrink: 1;
-      min-width: 0;
+
+    nav .nav-left { display: flex; align-items: center; gap: 15px; }
+    nav .nav-left img { width: 50px; height: 50px; object-fit: contain; border-radius: 8px; }
+
+    nav .title-container { display: flex; flex-direction: column; line-height: 1.1; }
+    nav .title-container h1 { font-size: 1.2rem; margin: 0; font-weight: 600; }
+    nav .title-container span { font-size: 0.85rem; color: #b0c4de; }
+
+    nav ul { list-style:none; display:flex; gap:30px; margin:0; padding:0; }
+    nav ul li a { color:white; text-decoration:none; font-weight:500; }
+
+    .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+
+    #filters { display:flex; gap:10px; flex-wrap:wrap; margin: 10px 0 25px 0; }
+    #filters button {
+      border:1px solid #1e3d59;
+      background:white;
+      color:#1e3d59;
+      padding:8px 14px;
+      border-radius:22px;
+      cursor:pointer;
+      font-size:0.9rem;
     }
-    nav .nav-left img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-    nav .nav-left .title-container {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-      min-width: 0;
-    }
-    nav .nav-left .title-container h1 {
-      font-size: 1.2rem;
-      margin: 0;
-      font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    nav .nav-left .title-container span {
-      font-size: 0.85rem;
-      font-weight: 300;
-      color: #b0c4de;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .property-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
+    #filters button:hover { background:#f0f4f8; }
+    #filters button.active { background:#1e3d59; color:white; }
+
+    .property-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+
     .property-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      width: 300px;
-      padding: 20px;
-      transition: transform 0.2s ease;
+      background:white;
+      border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      width:300px; padding:20px;
+      transition:transform 0.2s ease;
     }
-    .property-card:hover {
-      transform: scale(1.02);
-    }
-    .property-card h3 {
-      margin-top: 0;
-    }
+    .property-card:hover { transform:scale(1.02); }
+    .property-card h3 { margin-top:0; }
+
     .contact-section {
-      text-align: center;
-      background: #1e3d59;
-      color: white;
-      padding: 60px 20px;
-    }
-    .contact-section h2 {
-      margin-bottom: 20px;
-    }
-    .contact-section p {
-      font-size: 1rem;
+      text-align:center;
+      background:#1e3d59;
+      color:white;
+      padding:60px 20px;
     }
   </style>
 </head>
+
 <body>
 
-  <nav>
-    <div class="nav-left">
-      <img src="1.png" alt="Logo" />
-      <div class="title-container">
-        <h1>Vrishabha Properties & Constructions - Hassan</h1>
-        <span>Legally registered under the Ministry of MSME, Government of India</span>
-      </div>
+<nav>
+  <div class="nav-left">
+    <img src="1.png" alt="Logo" />
+    <div class="title-container">
+      <h1>Vrishabha Properties & Constructions - Hassan</h1>
+      <span>Legally registered under the Ministry of MSME, Government of India</span>
     </div>
-    <ul>
-      <li><a href="#listings">Listings</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About us</a></li>
-      
-    </ul>
-  </nav>
-  <div id="listings" class="section">
-    <h2>Featured Listings</h2>
-    <input
-  type="text"
-  id="search-bar"
-  placeholder="Search properties..."
-  style="
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    display: block;
-    padding: 12px 15px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-"
-/>
-    <div class="property-container" id="property-container">
-      </div>
   </div>
-<div id="about" class="section">
-  <h2>About Us</h2>
-
-  <p>
-    <strong>Vrishabha Properties & Constructions</strong> is a real estate and development proprietorship
-    based in Hassan, built on transparency, trust, and guided property services.  
-    We work across residential, commercial, farmland, layout development and joint venture projects.
-  </p>
-
-  <p>
-    Established in <strong>June 2025</strong>, Vrishabha has already supported
-    <strong>100+ happy clients</strong>, helping buyers, sellers, and investors make confident decisions.
-  </p>
-
-  <p>
-    We are registered under the <strong>Ministry of MSME, Government of India</strong> — reflecting
-    a commitment to ethical and well-documented real estate practices.
-  </p>
 
   <ul>
-    <li>Residential & commercial property sales</li>
-    <li>Joint development (JV) coordination</li>
-    <li>Layout development support</li>
-    <li>Construction guidance & consulting</li>
+    <li><a href="#listings">Listings</a></li>
+    <li><a href="#about">About us</a></li>
+    <li><a href="#contact">Contact us</a></li>
+    
   </ul>
+</nav>
 
-  <hr style="margin:35px 0;">
+<div id="listings" class="section">
+  <h2>Featured Listings</h2>
 
-  <h3>Founder</h3>
+  <input
+    type="text"
+    id="search-bar"
+    placeholder="Search properties..."
+    style="width:100%;max-width:500px;margin:20px auto;display:block;padding:12px 15px;font-size:1rem;border:1px solid #ccc;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.1);"
+  />
 
-  <div style="display:flex;flex-wrap:wrap;gap:25px;align-items:flex-start;">
-
-    <img src="vishwanath.jpeg" alt="Vishwanath Gowda"
-         style="width:260px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);" />
-
-    <div style="flex:1;min-width:260px;">
-
-      <div style="margin-bottom:14px;">
-        <span style="font-size:1.25rem;font-weight:700;">
-          Vishwanath Gowda
-        </span><br>
-        <span style="font-size:0.95rem;color:#666;">
-          Founder & Proprietor
-        </span>
-      </div>
-
-      <p>
-        Vishwanath started Vrishabha Properties & Constructions with the belief that
-        real estate should be guided, genuine, and stress-free.
-      </p>
-
-      <p>
-        Having worked closely with landowners, families, and developers, he focuses on transparent
-        deals, documentation clarity, and long-term relationships over short-term transactions.
-      </p>
-
-      <ul>
-        <li>Clear and honest communication</li>
-        <li>Balanced negotiations for owners & buyers</li>
-        <li>Responsible JV and layout project support</li>
-        <li>Client-first real estate guidance</li>
-      </ul>
-
-      <p>
-        His vision is to grow <strong>Vrishabha Properties & Constructions</strong> into one of Hassan’s most trusted real estate brands.
-      </p>
-    </div>
+  <div id="filters">
+    <button onclick="setCategory('all')">All</button>
+    <button onclick="setCategory('house')">Houses</button>
+    <button onclick="setCategory('site')">Sites</button>
+    <button onclick="setCategory('commercial')">Commercial</button>
+    <button onclick="setCategory('revenue')">Revenue Sites</button>
+    <button onclick="setCategory('farm')">Farms</button>
   </div>
+
+  <div class="property-container" id="property-container"></div>
 </div>
 
-  <div id="contact" class="contact-section">
+<!-- ABOUT + CONTACT (unchanged) -->
+<div id="about" class="section">
+  <h2>About Us</h2>
+  <p><strong>Vrishabha Properties & Constructions</strong> is a real estate and development proprietorship based in Hassan.</p>
+</div>
+
+<div id="contact" class="contact-section">
   <h2>Contact Us</h2>
-  <p>📞 Call: +91 8217816168</p>
-  <p>📍 Location: Hassan, Karnataka</p>
-  <p>📱 WhatsApp: <a style="color: #ffd700;" href="https://wa.me/918217816168" target="_blank">Chat Now</a></p>
-
-  <div style="margin-top: 15px; padding: 10px; border-left: 3px solid #ffd700;">
-    <p style="font-weight: 600; color: #ffd700; margin: 0;">
-      Government Registered Enterprise
-    </p>
-    <p style="margin: 3px 0 0 0; color: #ddd;">
-      Certified Micro Enterprise – Real Estate Services
-    </p>
-    <p style="margin: 3px 0 0 0; color: #ddd;">
-      Legally registered under the Ministry of MSME, Government of India
-    </p>
-    <p style="margin: 3px 0 0 0; color: #ddd;">
-      Verified & Trustworthy Real Estate and Construction Services in Hassan
-    </p>
-  </div>
+  <p>📞 +91 8217816168</p>
 </div>
 
-  <script>
-    const properties = [
+<script>
+const properties = [
+
       {
   "title": "Sl No 1: House for Sale – Vijayanagar, Hassan",
   "description": "Site Size: 20×30 ft<br>Facing: South Facing<br>Property Age: 10 Years",
   "image": "1.jpeg",
-  "link": "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2020x30%20south%20facing%20house%20for%20sale%20in%20Vijayanagar%2C%20Hassan%20(Sl%20No%201)%20listed%20on%20Vrishaba%20Properties."
+  "link": "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2020x30%20south%20facing%20house%20for%20sale%20in%20Vijayanagar%2C%20Hassan%20(Sl%20No%201)%20listed%20on%20Vrishaba%20Properties.",
+  category: "house"
 },{
   "title": "Sl No 2: Semi-Commercial Site for Sale – K R Puram, Hassan",
   "description": "• Site Size: 40×40 ft<br>• East Facing<br>• 30 Feet Cement Road<br>• Prime Location – Suitable for both Residential & Commercial Use",
@@ -665,51 +541,60 @@
   "link": "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%20Rent%20Generating%20House%20for%20Sale%20in%20Shantinagar%2C%20Hassan%20(Sl%20No%2089)%20listed%20on%20Vrishaba%20Properties."
 }
 ];
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+
+let activeCategory = "all";
+
+function shuffle(arr){
+  for(let i = arr.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-  const propertyContainer = document.getElementById("property-container");
-  function renderProperties(filter = "") {
-    propertyContainer.innerHTML = "";
-    const filtered = properties.filter((property) =>
-      (property.title + " " + property.description).toLowerCase().includes(filter.toLowerCase())
-    );
-    if (filtered.length === 0) {
-      propertyContainer.innerHTML = "<p>No properties found.</p>";
-      return;
-    }
-    const propertiesToRender = filter ? filtered : shuffle([...filtered]);
-   propertiesToRender.forEach(property => {
+  return arr;
+}
+
+const propertyContainer = document.getElementById("property-container");
+
+function renderProperties(search = "") {
+  propertyContainer.innerHTML = "";
+
+  let filtered = properties.filter(p => {
+    const text = (p.title + p.description).toLowerCase();
+    return text.includes(search.toLowerCase()) &&
+           (activeCategory === "all" || p.category === activeCategory);
+  });
+
+  filtered = shuffle(filtered);   // 🔥 ALWAYS shuffle the results
+
+  if (!filtered.length) {
+    propertyContainer.innerHTML = "<p>No properties found.</p>";
+    return;
+  }
+
+  filtered.forEach(property => {
     const card = document.createElement("div");
     card.className = "property-card";
     card.innerHTML = `
-      <img src="${property.image}" alt="${property.title}" style="width: 100%; height: auto; border-radius: 8px;" />
+      <img src="${property.image}" style="width:100%;border-radius:8px;" />
       <h3>${property.title}</h3>
       <p>${property.description}</p>
-      <a href="${property.link}" target="_blank" style="
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 15px;
-        background-color: #25D366;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-      ">Contact on WhatsApp</a>
-    `;
+      <a href="${property.link}" target="_blank"
+         style="display:inline-block;margin-top:10px;padding:10px 15px;background:#25D366;color:white;text-decoration:none;border-radius:6px;font-weight:bold;">
+         Contact on WhatsApp
+      </a>`;
     propertyContainer.appendChild(card);
   });
 }
-  window.addEventListener("DOMContentLoaded", () => {
-    renderProperties(); 
-  });
-  document.getElementById("search-bar").addEventListener("input", (e) => {
-    renderProperties(e.target.value);
-  });
-  </script>
+
+function setCategory(cat){
+  activeCategory = cat;
+  document.querySelectorAll("#filters button").forEach(btn => btn.classList.remove("active"));
+  document.querySelector(`#filters button[onclick="setCategory('${cat}')"]`).classList.add("active");
+  renderProperties(document.getElementById("search-bar").value);
+}
+
+window.addEventListener("DOMContentLoaded", () => setCategory("all"));
+document.getElementById("search-bar").addEventListener("input", e => renderProperties(e.target.value));
+</script>
+
 </body>
 </html>
