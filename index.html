@@ -151,51 +151,6 @@ border:none;
 border-top:1px solid #ddd;
 margin:30px 0;
 }
-
-#poster-popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:100000;
-}
-
-.poster-content{
-position:relative;
-max-width:90%;
-max-height:90%;
-}
-
-.poster-content img{
-width:100%;
-max-width:420px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.4);
-}
-
-#poster-close{
-position:absolute;
-top:-15px;
-right:-15px;
-background:white;
-color:black;
-width:32px;
-height:32px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:20px;
-cursor:pointer;
-box-shadow:0 2px 6px rgba(0,0,0,0.3);
-}
-
-    
   </style>
 </head>
 
@@ -504,15 +459,7 @@ const properties = [
   "description": "• Site Dimensions: 208×48 ft<br>• Total Area: 9,984 sq. ft<br>• Front Road: 80 ft wide main road<br>• Location: Salagame Road, near Ring Road, Hassan<br>• Ownership: Single owner, no litigation, all clear and fresh documents<br>• Best Use: Suitable for hospitals, commercial complex, apartments, or any major development<br><br>📌 Prime property with high potential!<br><br>Rate: ₹11,000 per sq.ft",
   "image": "4.jpeg",
   "link": "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%20Commercial%20Land%20for%20Sale%20(Sl%20No%204)%20at%20Salagame%20Road%2C%20Hassan%20listed%20on%20Vrishaba%20Properties."
-},
-  {
-  "title": "Sl No 5: Premium Luxury House for Sale – Sathyamangala, Hassan",
-  "category": "h",
-  "description": "• Site Size: 30×40 ft<br>• Configuration: 3 BHK House<br>• Facing: West Facing Site | North Facing Door<br>• Water: Own Borewell<br>• Finish: High-End Premium Interiors & Quality Fittings<br><br>Prime Location Advantages:<br>• Just 900 meters from Ring Road<br>• Only 500 meters to Hassan Public School<br><br>An elegant home designed for comfortable, classy living in one of Hassan’s best residential areas.<br><br><strong>Price: ₹1.45 Crores</strong>",
-  "image": "5.jpeg",
-  "link": "https://wa.me/918217816168?text=Hi%2C%20I'm%20interested%20in%20the%20Premium%20Luxury%203BHK%20House%20for%20Sale%20in%20Sathyamangala%2C%20Hassan%20(Sl%20No%205)%20listed%20on%20Vrishaba%20Properties."
-}
-,{
+},{
   "title": "Sl No 6: 3 Houses for Sale – Vijayanagar, Hassan",
   "category": "h",
   "description": "• Site Size: 20×30 ft<br>• South Facing Site | East Facing Door<br>• Total: 3 Individual Houses<br>• Location: Vijayanagar, Hassan<br><br>Price: ₹64 Lakhs",
@@ -699,7 +646,7 @@ const properties = [
       {
   "title": "Sl No 40: Site for Sale – S.M. Krishna Layout, Hassan",
   "category": "s",
-  "description": "Size: 30×50 ft<br>Facing: East Facing<br>Location: S.M. Krishna Layout, Hassan<br>Peaceful and Well-Developed Locality<br>Ideal for residential construction or investment.<br><br>Rate: ₹3,200 per sq.ft",
+  "description": "Size: 30×50 ft<br>Facing: East Facing<br>Location: S.M. Krishna Layout, Hassan<br>Peaceful and Well-Developed Locality<br>Ideal for residential construction or investment.<br><br>Rate: ₹3,000 per sq.ft",
   "image": "100.jpeg",
   "link": "https://wa.me/918217816168?text=Hi%2C%20I%20am%20interested%20in%20the%2030x50%20east%20facing%20site%20for%20sale%20in%20S.M.%20Krishna%20Layout%2C%20Hassan%20(Sl%20No%2040)%20listed%20on%20Vrishaba%20Properties."
 }
@@ -1088,22 +1035,9 @@ menu.style.right = menuOpen ? "-260px" : "0";
 menuOpen = !menuOpen;
 }
 
-function closePoster(){
-document.getElementById("poster-popup").style.display="none";
-}
-
-window.addEventListener("load",()=>{
-document.getElementById("poster-popup").style.display="flex";
-});
 
 </script>
-<!-- Republic Day Popup -->
-<div id="poster-popup">
-  <div class="poster-content">
-    <span id="poster-close" onclick="closePoster()">✕</span>
-    <img src="rep.jpeg" alt="Republic Day Poster">
-  </div>
-</div>
+
 
 
 
